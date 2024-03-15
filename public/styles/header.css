@@ -1,6 +1,8 @@
 header {
-    height: 700px;
+    height: 400px;
     width: 100%;
+    position: relative;
+    top: 120px;
     color: white;
     font-family: 'Source Sans 3';
     display: flex;

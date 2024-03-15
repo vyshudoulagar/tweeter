@@ -1,12 +1,26 @@
 nav {
+    display: flex;
     height: 120px;
-    width: auto;
+    width: 100%;
     background-color: #4056A1;
     color: #FFFFFF;
-}
-
-nav>span {
-    font-family: Bungee;
     padding-left: 1.5em;
     padding-right: 1.5em;
+    justify-content: space-between;
+    align-items: center;
 }
+
+nav span {
+    font-family: Bungee;
+    font-size: xx-large;
+}
+
+.new-tweet {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.arrow {
+    color: red;
+    text-align: center;
+}
+

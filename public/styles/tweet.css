@@ -1,36 +1,40 @@
-.all-tweets {
+.tweet {
     border: 5px solid black;
     background: none;
     padding: 20px;
     margin: 50px 0 50px 0;
 }
-.all-tweets:hover {
+.tweet:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-article header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-article header div {
+.name {
     display: flex;
     align-items: center;
+}
+.handle {
+    opacity: 0.5;
 }
 article header div img {
     padding-right: 15px;
 }
-article p {
+.content {
     border-bottom: 5px solid black;
     padding-bottom: 10px;
 }
 
-article footer {
+.footer {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     font-size: medium;
 }
-article footer i:hover {
-   color: #d19600
+.icons i:hover {
+   color: #d19600;
+   transition: color 0.2s ease-in-out;
 }

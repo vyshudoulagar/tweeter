@@ -65,4 +65,28 @@ $(document).ready(function() {
     };
 
     renderTweets(data);
+
+
+$('#tweet-form').on('submit', function(event) {
+    //Prevents default from submission
+    event.preventDefault();
+
+    //Serialise form data
+    const formData = $(this).serialize();
+
+    //Make AJAX POST request
+    $.post({
+        url: '/tweets/',
+        data: formData,
+        success: function(response) {
+            //Handle successful response
+            $('#response').html(response);
+        },
+        error: function(xhr, status, error) {
+            //Handle error
+            console.log(xhr.responseText);
+        }
+    })
+})
+
 });

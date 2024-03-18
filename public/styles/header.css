@@ -1,4 +1,4 @@
-header {
+#header {
     height: 400px;
     width: 100%;
     position: relative;
@@ -11,4 +11,6 @@ header {
     align-items: center;
     background-color: #d19600;
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    padding-top: 20px;
+    z-index: 4;
 }

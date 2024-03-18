@@ -1,4 +1,6 @@
-
+main section h2 {
+    padding-top: 10px;
+}
 textarea {
     width: 100%;
     border: none;

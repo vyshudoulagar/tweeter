@@ -64,24 +64,34 @@ $(document).ready(function() {
         }
     };
 
-    // renderTweets(data);
+    const resetTweetForm = () => {
+        $('#tweet-form')[0].reset();
+    };
 
+    const resetCharCounter = () => {
+        const maxChars = 140;
+        $('.counter').text(maxChars);
+    };
+
+    const isTweetValid = () => {
+        const textCount = $('#tweet-text');
+        const textLength = (textCount.val().trim().length);
+        if (textLength === 0) {
+            alert("Your tweet cannot be empty");
+            return;
+        }
+        if (textLength >= 140) {
+            alert("Your tweet cannot exceed 140 characters");
+            return;
+        }
+    };
 
     $('#tweet-form').on('submit', function(event) {
         //Prevents default from submission
         event.preventDefault();
 
-        //implementing validation
-        const textCount = $('#tweet-text');
-        const textLength = (textCount.val().trim().length);
-        if (textLength === 0) {
-            alert("No text in post body");
-            return;
-        }
-        if (textLength >= 140) {
-            alert("Too many characters");
-            return;
-        }
+        //Validating tweet form
+        isTweetValid();
 
         //Serialise form data
         const formData = $(this).serialize();
@@ -94,6 +104,10 @@ $(document).ready(function() {
             .then(function(response) {
                 //Handle successful response
                 $('#response').html(response);
+                //Reset the tweet form
+                resetTweetForm();
+                // Reset the character counter
+                resetCharCounter();
                 //call the function to load tweets
                 loadTweets();
             })

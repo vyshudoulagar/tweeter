@@ -67,41 +67,53 @@ $(document).ready(function() {
     // renderTweets(data);
 
 
-$('#tweet-form').on('submit', function(event) {
-    //Prevents default from submission
-    event.preventDefault();
+    $('#tweet-form').on('submit', function(event) {
+        //Prevents default from submission
+        event.preventDefault();
 
-    //Serialise form data
-    const formData = $(this).serialize();
-
-    //Make AJAX POST request
-    $.post({
-        url: '/tweets/',
-        data: formData,
-        success: function(response) {
-            //Handle successful response
-            $('#response').html(response);
-        },
-        error: function(xhr, status, error) {
-            //Handle error
-            console.log(xhr.responseText);
+        //implementing validation
+        const textCount = $('#tweet-text');
+        const textLength = (textCount.val().trim().length);
+        if (textLength === 0) {
+            alert("No text in post body");
+            return;
         }
-    })
-});
-
-const loadTweets = function() {
-    //Make AJAX GET request
-    $.ajax('/tweets/', {
-        method: 'GET',
-        success: function(tweets) {
-            renderTweets(tweets);
-        },
-        error: function(xhr, status, error) {
-            console.log(error);
+        if (textLength >= 140) {
+            alert("Too many characters");
+            return;
         }
+
+        //Serialise form data
+        const formData = $(this).serialize();
+
+        //Make AJAX POST request
+        $.post({
+            url: '/tweets/',
+            data: formData
+        })
+            .then(function(response) {
+                //Handle successful response
+                $('#response').html(response);
+                //call the function to load tweets
+                loadTweets();
+            })
+            .catch(function(xhr, status, error) {
+                //Handle error
+                alert("tweet could not be posted");
+                console.log(xhr.responseText);
+            });
     });
-};
 
-loadTweets();
+
+    const loadTweets = function() {
+        //Make AJAX GET request
+        $.ajax('/tweets/', { method: 'GET' })
+            .then(function(tweets) {
+                renderTweets(tweets);
+            })
+            .catch(function(xhr, status, error) {
+                console.log(error);
+            });
+    };
 
 });

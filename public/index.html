@@ -64,6 +64,8 @@
     <main class="container">
         <section class="new-tweet">
             <h2>Compose Tweet</h2>
+            <div class="error-message" id="empty-message">⚠️ Your tweet cannot be empty ⚠️</div>
+            <div class="error-message" id="limit-reached">⚠️ Your tweet cannot exceed 140 characters ⚠️</div>
             <form action="/tweets/" method="POST" id="tweet-form">
                 <label for="tweet-text">What are you humming about?</label>
                 <textarea name="text" id="tweet-text"></textarea>

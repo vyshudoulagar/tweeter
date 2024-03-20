@@ -13,6 +13,10 @@ const postTweet = (event) => {
     //Prevents default from submission
     event.preventDefault();
 
+    //hiding displayed error messages before validation
+    $('#empty-message').hide();
+    $('#limit-reached').hide();
+
     //Validating tweet form
     if (isTweetValid()) {
 
@@ -102,11 +106,13 @@ const isTweetValid = () => {
     const textCount = $('#tweet-text');
     const textLength = (textCount.val().trim().length);
     if (textLength === 0) {
-        alert("Your tweet cannot be empty");
+        $('#empty-message').slideDown();
+        $('#empty-message').show();
         return false;
     }
     if (textLength >= 140) {
-        alert("Your tweet cannot exceed 140 characters");
+        $('#limit-reached').slideDown();
+        $('#limit-reached').show();
         return false;
     }
     return true;

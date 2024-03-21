@@ -5,13 +5,19 @@
  */
 
 $(() => { //start after the document is ready
-    $('#compose').on('click', composeTweet);
+    $('.compose').on('click', composeTweet);
     $('#tweet-form').on('submit', postTweet);
 });
 
 //Functions
 const composeTweet = () => { //slides down tweet form
-    $('#new-tweet').slideDown();
+    const $newTweet = $('.new-tweet');
+    if ($newTweet.is(':visible')) {
+        $newTweet.slideUp();
+    } else {
+        $newTweet.slideDown();
+        $('#tweet-text').prop('disabled', false).focus();
+    }
 };
 
 const postTweet = (event) => {
@@ -81,7 +87,7 @@ const createTweetElement = (tweetObject) => {
     $header.append($name);
     $header.append($('<div>').append($('<span>').addClass('handle').text(tweetObject.user.handle)));
     $tweet.append($header);
-    
+
     $tweet.append($('<p>').addClass('content').text(tweetObject.content.text));
 
     const $footer = $('<footer>').addClass('footer');

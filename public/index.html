@@ -42,7 +42,7 @@
             <span class="nav-title">tweeter</span>
         </div>
         <div>
-            <div class="new-tweet">
+            <div class="new-tweet" id="compose">
                 <strong>Write</strong> a new tweet
             </div>
             <div class="arrow">
@@ -62,8 +62,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-        <section class="new-tweet">
-            <h2>Compose Tweet</h2>
+        <section class="new-tweet" id="new-tweet">
             <div class="error-message" id="empty-message">⚠️ Your tweet cannot be empty ⚠️</div>
             <div class="error-message" id="limit-reached">⚠️ Your tweet cannot exceed 140 characters ⚠️</div>
             <form action="/tweets/" method="POST" id="tweet-form">

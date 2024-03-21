@@ -5,10 +5,15 @@
  */
 
 $(() => { //start after the document is ready
+    $('#compose').on('click', composeTweet);
     $('#tweet-form').on('submit', postTweet);
 });
 
 //Functions
+const composeTweet = () => { //slides down tweet form
+    $('#new-tweet').slideDown();
+};
+
 const postTweet = (event) => {
     //Prevents default from submission
     event.preventDefault();
@@ -107,12 +112,10 @@ const isTweetValid = () => {
     const textLength = (textCount.val().trim().length);
     if (textLength === 0) {
         $('#empty-message').slideDown();
-        $('#empty-message').show();
         return false;
     }
     if (textLength >= 140) {
         $('#limit-reached').slideDown();
-        $('#limit-reached').show();
         return false;
     }
     return true;

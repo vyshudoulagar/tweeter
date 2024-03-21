@@ -1,6 +1,7 @@
-main section h2 {
-    padding-top: 10px;
+#tweet-form {
+    padding-top: 20px;
 }
+
 textarea {
     width: 100%;
     border: none;

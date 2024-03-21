@@ -7,6 +7,8 @@
 $(() => { //start after the document is ready
     $('.compose').on('click', composeTweet);
     $('#tweet-form').on('submit', postTweet);
+    $(window).on('scroll', displayToggleButton);
+    $('.top-button').on('click', goToTop);
 });
 
 //Functions
@@ -127,3 +129,18 @@ const isTweetValid = () => {
     return true;
 };
 
+//function to display top button when scrolled down
+const displayToggleButton = () => {
+    if ($(window).scrollTop() > 100) {
+        $('.top-button').fadeIn();
+    } else {
+        $('.top-button').fadeOut();
+    }
+};
+
+//function to scroll up to top and enable text area when clicked 
+const goToTop = () => {
+    $('html, body').animate({scrollTop: 0}, 500);
+    $('.new-tweet').slideDown();
+    $('#tweet-text').prop('disabled', false).focus();
+};

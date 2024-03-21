@@ -131,7 +131,7 @@ const isTweetValid = () => {
 
 //function to display top button when scrolled down
 const displayToggleButton = () => {
-    if ($(window).scrollTop() > 100) {
+    if ($(window).scrollTop() > 500) {
         $('.top-button').fadeIn();
     } else {
         $('.top-button').fadeOut();

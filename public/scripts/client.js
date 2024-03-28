@@ -132,7 +132,7 @@ const isTweetValid = () => {
         $('#empty-message').slideDown();
         return false;
     }
-    if (textLength >= 140) {
+    if (textLength > 140) {
         $('#limit-reached').slideDown();
         return false;
     }

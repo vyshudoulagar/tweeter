@@ -1,25 +1,25 @@
 #header {
-    height: 400px;
-    width: 100%;
-    position: relative;
-    top: 120px;
-    color: white;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #d19600;
-    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-    padding-top: 20px;
-    z-index: 4;
+  height: 400px;
+  width: 100%;
+  position: relative;
+  top: 120px;
+  color: white;
+  font-family: Source Sans 3, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d19600;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  padding-top: 20px;
+  z-index: 4;
 }
 
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
-    #header {
-        float: left;
-        margin: 0px 50px 50px 50px;
-        width: 33.3%;
-    }
+  #header {
+    float: left;
+    margin: 0px 50px 50px 50px;
+    width: 33.3%;
+  }
 }

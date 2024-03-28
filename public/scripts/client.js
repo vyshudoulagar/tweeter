@@ -5,6 +5,7 @@
  */
 
 $(() => { //start after the document is ready
+    loadTweets();
     $('.compose').on('click', composeTweet);
     $('#tweet-form').on('submit', postTweet);
     $(window).on('scroll', displayToggleButton);
@@ -13,11 +14,17 @@ $(() => { //start after the document is ready
 
 //Functions
 const composeTweet = () => { //slides down tweet form
+    //hiding displayed error messages when hiding compose message
+    $('#empty-message').hide();
+    $('#limit-reached').hide();
     const $newTweet = $('.new-tweet');
     if ($newTweet.is(':visible')) {
         $newTweet.slideUp();
+        // $newTweet.hide();
+
     } else {
         $newTweet.slideDown();
+        // $newTweet.show();
         $('#tweet-text').prop('disabled', false).focus();
     }
 };
@@ -106,15 +113,18 @@ const createTweetElement = (tweetObject) => {
     return $tweet;
 };
 
+//function to clear text area once the tweet is submitted
 const resetTweetForm = () => {
     $('#tweet-form')[0].reset();
 };
 
+//function to reset counter after the tweet is submitted
 const resetCharCounter = () => {
     const maxChars = 140;
     $('.counter').text(maxChars);
 };
 
+//function to check if tweet is valid
 const isTweetValid = () => {
     const textCount = $('#tweet-text');
     const textLength = (textCount.val().trim().length);
@@ -140,7 +150,7 @@ const displayToggleButton = () => {
 
 //function to scroll up to top and enable text area when clicked 
 const goToTop = () => {
-    $('html, body').animate({scrollTop: 0}, 500);
+    $('html, body').animate({ scrollTop: 0 }, 500);
     $('.new-tweet').slideDown();
     $('#tweet-text').prop('disabled', false).focus();
 };

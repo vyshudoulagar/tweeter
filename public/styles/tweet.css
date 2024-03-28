@@ -1,52 +1,45 @@
-
-
 .tweet {
-    border: 4px solid black;
-    background: none;
-    padding: 20px;
-    margin: 50px 0 0 0;
+  border: 4px solid black;
+  background: none;
+  padding: 20px;
+  margin: 50px 0 0 0;
 }
 .tweet:hover {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.tweet .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tweet .header .name {
+  display: flex;
+  align-items: center;
+}
+.tweet .header .name img {
+  padding-right: 15px;
+}
+.tweet .header .handle {
+  opacity: 0.5;
+}
+.tweet .content {
+  border-bottom: 5px solid black;
+  padding-bottom: 10px;
+}
+.tweet .footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: medium;
+}
+.tweet .footer .icons i:hover {
+  color: #d19600;
+  transition: color 0.2s ease-in-out;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.name {
-    display: flex;
-    align-items: center;
-}
-.handle {
-    opacity: 0.5;
-}
-article header div img {
-    padding-right: 15px;
-}
-.content {
-    border-bottom: 5px solid black;
-    padding-bottom: 10px;
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    font-size: medium;
-}
-
-.icons i:hover {
-   color: #d19600;
-   transition: color 0.2s ease-in-out;
-}
-
-/* Desktop styles */
 @media only screen and (min-width: 1024px) {
-    .tweet {
-        float: right;
-        width: 50%;
-        clear: right;
-    }
+  .tweet {
+    float: right;
+    width: 50%;
+    clear: right;
+  }
 }

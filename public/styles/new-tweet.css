@@ -1,67 +1,58 @@
-#tweet-form {
-    padding-top: 20px;
-}
-
 .new-tweet {
-    display: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
- }
-
-textarea {
-    width: 100%;
-    border: none;
-    outline: none;
-    background-color: inherit;
-    resize: none;
-    border-bottom: 5px solid black;
+  display: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
-
-button {
-    margin-top: 20px;
-    background: #4056A1;
-    color: white;
-    font-family: Bungee;
-    padding: 5px 8px 5px 8px;
-    flex: none;
+.new-tweet .error-message {
+  text-align: center;
+  color: #ff9999;
+  border: 2px solid red;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 50px;
 }
-.counter {
-    margin-top: 20px;
-    font-family: Bungee;
+.new-tweet #tweet-form {
+  padding-top: 20px;
 }
-
-.actions {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.new-tweet #tweet-form textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  resize: none;
+  border-bottom: 5px solid black;
 }
-
-.negative {
-    color: red;
+.new-tweet #tweet-form .actions {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
-.error-message {
-    display: none;
-    text-align: center;
-    color: #ff9999;
-    border: 2px solid red;
-    padding: 10px;
-    font-size: 20px;
-    margin-bottom: 50px;
+.new-tweet #tweet-form .actions button {
+  margin-top: 20px;
+  background: #4056A1;
+  color: white;
+  font-family: Bungee;
+  padding: 5px 8px 5px 8px;
+  flex: none;
+}
+.new-tweet #tweet-form .actions .counter {
+  margin-top: 20px;
+  font-family: Bungee;
+}
+.new-tweet #tweet-form .actions .negative {
+  color: red;
 }
 
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
-    .error-message {
-        float: right;
-        width: 50%;
-    }
-    #tweet-form {
-        width: 50%;
-        top: 50px;
-        float: right;
-    }
-    textarea {
-        position: relative;
-    }
+  .new-tweet {
+    width: 50%;
+    float: right;
+  }
+  .new-tweet #tweet-form {
+    margin-top: 50px;
+  }
+  .new-tweet #tweet-form textarea {
+    position: relative;
+  }
 }

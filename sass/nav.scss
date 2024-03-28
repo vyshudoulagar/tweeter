@@ -1,0 +1,59 @@
+$blue-color: #4056A1;
+
+nav {
+    position: fixed;
+    display: flex;
+    height: 120px;
+    width: 100%;
+    background-color: #d19600;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    color: #FFFFFF;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+
+    >div {
+        .nav-title {
+            font-family: 'Bungee';
+            font-size: xx-large;
+        }
+
+        .compose {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .arrow {
+            color: red;
+            text-align: center;
+        }
+    }
+}
+
+.top-button {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: $blue-color;
+    color: #fff;
+    border: none;
+    cursor: pointer; 
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+    nav {
+        position: fixed;
+        top: 0;
+        background-color: $blue-color;
+        background-image: none;
+    }
+}

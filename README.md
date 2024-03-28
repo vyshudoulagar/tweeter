@@ -6,9 +6,9 @@ Express is used as a backend. Application is secured against scripting attacks. 
 
 ## Final Product
 
-!["Screenshot of tweeter mobile view"](URL)
-!["Screenshot of tweeter desktop view"](URL)
-!["Screenshot of tweeter desktop view compose tweet"](URL)
+!["Screenshot of tweeter mobile view"](https://github.com/vyshudoulagar/tweeter/blob/master/docs/mobile.png?raw=true)
+!["Screenshot of tweeter desktop view"](https://github.com/vyshudoulagar/tweeter/blob/master/docs/desktop.png?raw=true)
+!["Screenshot of tweeter desktop view compose tweet"](https://github.com/vyshudoulagar/tweeter/blob/master/docs/desktopCompose.png?raw=true)
 
 ## Getting Started
 

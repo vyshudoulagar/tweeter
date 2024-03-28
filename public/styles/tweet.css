@@ -1,10 +1,10 @@
 
 
 .tweet {
-    border: 5px solid black;
+    border: 4px solid black;
     background: none;
     padding: 20px;
-    margin: 50px 0 50px 0;
+    margin: 50px 0 0 0;
 }
 .tweet:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
@@ -40,4 +40,13 @@ article header div img {
 .icons i:hover {
    color: #d19600;
    transition: color 0.2s ease-in-out;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+    .tweet {
+        float: right;
+        width: 50%;
+        clear: right;
+    }
 }

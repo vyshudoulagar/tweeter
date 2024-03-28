@@ -3,7 +3,8 @@ nav {
     display: flex;
     height: 120px;
     width: 100%;
-    background-color: #4056A1;
+    background-color: #d19600;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
     color: #FFFFFF;
     padding-left: 1.5em;
     padding-right: 1.5em;
@@ -13,7 +14,7 @@ nav {
 }
 
 .nav-title {
-    font-family: Bungee;
+    font-family: 'Bungee';
     font-size: xx-large;
 }
 
@@ -42,4 +43,14 @@ nav {
     color: #fff;
     border: none;
     cursor: pointer; 
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+    nav {
+        position: fixed;
+        top: 0;
+        background-color: #4056A1;
+        background-image: none;
+    }
 }

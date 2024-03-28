@@ -49,3 +49,19 @@ button {
     font-size: 20px;
     margin-bottom: 50px;
 }
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+    .error-message {
+        float: right;
+        width: 50%;
+    }
+    #tweet-form {
+        width: 50%;
+        top: 50px;
+        float: right;
+    }
+    textarea {
+        position: relative;
+    }
+}
